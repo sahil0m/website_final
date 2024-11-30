@@ -91,7 +91,7 @@ nav .fa {
 
 .nav-links ul li:hover .dropdown {
     display: block;
-    position: relative;
+    position: absolute;
     top: 10px;
 }
 
