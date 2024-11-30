@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - The Engineering Factory</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="sub-header">
+        {{> navbar}}
+        <h1>Department Quiz</h1>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="quiz-section">
+        <div id="quiz-container">
+            <h2 class="quiz-title">Choose Your Department</h2>
+
+            <!-- Step 1: Choose Department -->
+            <div id="department-container" class="selection-container">
+                <button class="department-btn" data-department="CSE">Computer Science (CSE)</button>
+                <button class="department-btn" data-department="ECOM">Electronics & Communication (ECOM)</button>
+                <button class="department-btn" data-department="ME">Mechanical Engineering (ME)</button>
+            </div>
+
+            <!-- Step 2: Choose Subject -->
+            <div id="subject-container" style="display: none;">
+                <h2 class="quiz-title">Choose a Subject</h2>
+                <div id="subjects" class="selection-container"></div>
+            </div>
+
+            <!-- Step 3: Quiz Questions -->
+            <div id="quiz-content" style="display: none;">
+                <h2 id="subject-title" class="quiz-title"></h2>
+                <div id="question-container" class="question-text"></div>
+                <div id="answers-container"></div>
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+                <button id="next" class="btn">Next</button>
+                <button id="submit" class="btn" style="display: none;">Submit</button>
+            </div>
+
+            <!-- Step 4: Results -->
+            <div id="results" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    {{> footer}}
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

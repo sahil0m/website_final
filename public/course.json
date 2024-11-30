@@ -1,0 +1,40 @@
+{
+    "header": {
+      "logo": "images/logo.png",
+      "logoText": "The Engineering Factory"
+    },
+    "pageContent": {
+      "courses": {
+        "title": "Our Engineering Programs",
+        "description": "Discover our range of engineering programs, each tailored to equip students with practical skills and a deep understanding of the engineering landscape.",
+        "coursesList": [
+          {
+            "name": "Computer Science & Engineering",
+            "description": "Delve into the world of computer science, learning everything from programming fundamentals to advanced algorithms and data structures.",
+            "link": "/CSE"
+          },
+          {
+            "name": "Electronics & Computer Engineering",
+            "description": "Explore the intersection of electronics and computing, with courses covering circuit design, microprocessors, and embedded systems.",
+            "link": "/ECOM"
+          },
+          {
+            "name": "Mechanical Engineering",
+            "description": "Gain a thorough understanding of mechanical systems and engineering principles, including mechanics, thermodynamics, and material science.",
+            "link": "/ME"
+          }
+        ]
+      },
+      "footer": {
+        "about": "We provide free, high-quality resources for engineering students, helping them succeed in their studies and careers.",
+        "socialLinks": {
+          "facebook": "#",
+          "twitter": "#",
+          "instagram": "#",
+          "linkedin": "#"
+        },
+        "credits": "made with <i class='fa fa-heart-o'></i> by Easy Tutorials"
+      }
+    }
+  }
+  

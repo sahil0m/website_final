@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Engineering Factory</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section class="sub-header">
+        {{> navbar}}
+        <h1 id="aboutUs"></h1>
+    </section>
+
+    <!-- About Us Content Section -->
+    <section class="about-us" id="aboutUsSection">
+        <div class="content" id="aboutUsContent">
+            <!-- Content will be injected here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    {{> footer}}
+
+    <script>
+        // Fetch JSON data from the data.json file
+        fetch('about.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Rendering Header Section
+                const logoElement = document.getElementById("logo");
+                const logoTextElement = document.getElementById("logoText");
+
+                if (logoElement && logoTextElement) {
+                    logoElement.src = data.header.logo;
+                    logoTextElement.textContent = data.header.logoText;
+                }
+
+                // Rendering About Us Section
+                document.getElementById("aboutUs").textContent = data.pageContent.aboutUs.title;
+                const aboutUsContent = document.getElementById("aboutUsContent");
+                data.pageContent.aboutUs.content.forEach(item => {
+                    const element = document.createElement(item.type);
+                    element.textContent = item.text;
+                    aboutUsContent.appendChild(element);
+                });
+
+                // Rendering Footer Section
+                document.getElementById("footerAbout").textContent = data.pageContent.footer.about;
+                document.getElementById("contactEmail").textContent = data.pageContent.footer.contactEmail;
+                document.getElementById("contactEmail").href = "mailto:" + data.pageContent.footer.contactEmail;
+
+                // Rendering Social Icons
+                const socialIcons = document.getElementById("socialIcons");
+                for (const [key, value] of Object.entries(data.pageContent.footer.socialLinks)) {
+                    const iconLink = document.createElement('a');
+                    iconLink.href = value;
+                    iconLink.innerHTML = `<i class="fa fa-${key}"></i>`;
+                    socialIcons.appendChild(iconLink);
+                }
+
+                // Log success to the console
+                console.log("Successfully loaded JSON data.");
+            })
+            .catch(error => {
+                console.error('Error loading JSON data:', error);
+            });
+
+        function showMenu() {
+            document.getElementById("navLinks").style.right = "0";
+        }
+
+        function hideMenu() {
+            document.getElementById("navLinks").style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>

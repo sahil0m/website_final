@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Engineering Factory</title>
+<link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section class="header" id="header-section">
+        {{> navbar }}
+        <div class="text-box">
+            <h1>Where the Engineering Adventure Starts...</h1>
+            <p>Unlock free study resources and start your engineering adventure with us.</p>
+            <a href="/quiz" class="hero-btn">Take a Quiz to Know More</a>
+        </div>
+    </section>
+    </section>
+
+    <!-- Other Sections -->
+    <section class="course" id="about-section"></section>
+    <section class="facility" id="resources-section"></section>
+    <section class="testimonials" id="testimonials-section"></section>
+    <section class="cta" id="cta-section"></section>
+    <section class="footer" id="footer-section"></section>
+
+    {{> footer }}
+
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        // Fetch the JSON data from the data.json file
+        fetch('index.json')
+            .then(response => response.json())
+            .then(data => {
+                
+                // Other sections rendering (About, Resources, Testimonials, etc.)
+                renderAboutSection(data);
+                renderResourcesSection(data);
+                renderTestimonialsSection(data);
+                renderCTASection(data);
+                renderFooterSection(data);
+                console.log(data);
+            })
+            .catch(error => console.error('Error loading JSON data:', error));
+
+        // Function to render About Section
+        function renderAboutSection(data) {
+            document.getElementById("about-section").innerHTML = `
+                <h1>${data.about.title}</h1>
+                <p>${data.about.description}</p>
+                <div class="row">
+                    <div class="course-col">
+                        <h3>${data.about.mission.title}</h3>
+                        <p>${data.about.mission.text}</p>
+                    </div>
+                     <div class="course-col">
+                        <h3>${data.about.vision.title}</h3>
+                        <p>${data.about.vision.text}</p>
+                    </div>
+                    <div class="course-col">
+                        <h3>${data.about.aim.title}</h3>
+                        <p>${data.about.aim.text}</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to render Resources Section
+        function renderResourcesSection(data) {
+            const resourcesSection = document.getElementById("resources-section");
+            resourcesSection.innerHTML = `
+                <h1>${data.resources.title}</h1>
+                <p>${data.resources.description}</p>
+                <div class="row">
+                    ${data.resources.facilities.map(facility => `
+                        <div class="facility-col">
+                            <img src="${facility.image}" alt="${facility.title}">
+                            <h3>${facility.title}</h3>
+                            <p>${facility.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Function to render Testimonials Section
+        function renderTestimonialsSection(data) {
+            const testimonialsSection = document.getElementById("testimonials-section");
+            testimonialsSection.innerHTML = `
+                <h1>${data.testimonials.title}</h1>
+                <p>${data.testimonials.description}</p>
+                <div class="row">
+                    ${data.testimonials.testimonials.map(testimonial => `
+                        <div class="testimonial-col">
+                            <img src="${testimonial.image}" alt="Testimonial from ${testimonial.name}">
+                            <div>
+                                <p>"${testimonial.text}"</p>
+                                <h3>${testimonial.name}</h3>
+                                ${'<i class="fa fa-star"></i>'.repeat(Math.floor(testimonial.rating))}
+                                ${testimonial.rating % 1 !== 0 ? '<i class="fa fa-star-half-o"></i>' : ''}
+                                ${'<i class="fa fa-star-o"></i>'.repeat(5 - Math.ceil(testimonial.rating))}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Function to render CTA Section
+        function renderCTASection(data) {
+            document.getElementById("cta-section").innerHTML = `
+                <h1>${data.cta.title}</h1>
+                <a href="${data.cta.url}" class="hero-btn">${data.cta.buttonText}</a>
+            `;
+        }
+
+        // Function to render Footer Section
+        function renderFooterSection(data) {
+            const footerSection = document.getElementById("footer-section");
+            footerSection.innerHTML = `
+                <h4>About Us</h4>
+                <p>${data.footer.about}</p>
+                <div class="icons">
+                    <a href="${data.footer.socialLinks.facebook}"><i class="fa fa-facebook"></i></a>
+                    <a href="${data.footer.socialLinks.twitter}"><i class="fa fa-twitter"></i></a>
+                    <a href="${data.footer.socialLinks.instagram}"><i class="fa fa-instagram"></i></a>
+                    <a href="${data.footer.socialLinks.linkedin}"><i class="fa fa-linkedin"></i></a>
+                </div>
+                <p>Contact us: <a href="mailto:${data.footer.contactEmail}">${data.footer.contactEmail}</a></p>
+            `;
+        }
+
+        // JavaScript for Toggle Menu
+        function showMenu() {
+            document.getElementById("navLinks").style.right = "0";
+            document.querySelector("i.fa-bars").style.display = "none"; // Hide the hamburger menu icon
+            document.querySelector("i.fa-times").style.display = "block"; // Show the close icon
+        }
+
+        function hideMenu() {
+            document.getElementById("navLinks").style.right = "-200px";
+            document.querySelector("i.fa-bars").style.display = "block"; // Show the hamburger menu icon
+            document.querySelector("i.fa-times").style.display = "none"; // Hide the close icon
+        }
+    </script>
+
+    <!-- Optional close button for mobile menu -->
+    <i class="fa fa-times" onclick="hideMenu()" style="display: none;"></i>
+
+</body>
+
+</html>

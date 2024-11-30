@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Science and Engineering</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="sub-header">
+        {{> navbar}}
+        <h1>Computer Science & Engineering</h1>
+    </section>
+    
+    <!-- CSE Content Section -->
+    <section class="about-us">
+        <div class="search-bar">
+            <h2>FIRST YEAR (CSE)</h2>
+            <div class="search-option">
+                <i class="fa fa-search"></i>
+                <span>Search</span>
+            </div>
+        </div>
+        
+        <div class="youtube-links">
+            <div class="links-grid">
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/mlIUKyZIUUU" frameborder="0"></iframe>
+                </div>
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/yRpLlJmRo2w?list=PLfqMhTWNBTe3LtFWcvwpqTkUSlB32kJop" frameborder="0"></iframe>
+                </div>
+                <div class="item">
+                    <iframe src="https://www.youtube.com/embed/6T3jMNUCRNU" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subject-grid">
+            <div class="grid-content">
+                <div class="item1">
+                    <img src="./assets/gridimage.png" alt="">
+                    <h3><a href="https://youtu.be/DRWYmaqkbX8">Basic Electronic and Electrical Engineering</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="./assets/gridimage2.png" alt="">
+                    <h3><a href="https://youtu.be/BGMUh31lc7k">Physics for Engineering</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="./assets/gridimage3.jpeg" alt="">
+                    <h3><a href="https://www.youtube.com/live/tUDr-4sVOf4">Mathematics for Engineering</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="./assets/gridimage4.png" alt="">
+                    <h3><a href="https://youtu.be/pTB0EiLXUC8">Object-Oriented Programming</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="assets/dsa.jpg" alt="">
+                    <h3><a href="https://youtu.be/WQoB2z67hvY">Data Structures and Algorithms</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="assets/fdscse.jpg" alt="">
+                    <h3><a href="https://youtu.be/bQZk18rke2o">Fundamentals of Data Science</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="assets/c_program.jpg" alt="">
+                    <h3><a href="https://www.youtube.com/watch?v=-o3AxdVcUtQ">Applied Data Science</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="assets/fdlcse.jpg" alt="">
+                    <h3><a href="https://youtu.be/O0gtKDu_cJc">Fundamentals of Digital Logic</a></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    {{> footer}}
+    
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - The Engineering Factory</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="sub-header">
+        <nav>
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+                <span class="logo-text">The Engineering Factory</span>
+            </div>
+            <div class="nav-links" id="navLinks">  
+                <i class="fa fa-close" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li>
+                        <a href="course.html">COURSES</a>
+                        <ul class="dropdown">
+                            <li><a href="CSE.html">Computer Science & Engineering</a></li>
+                            <li><a href="ECOM.html">Electronics and Computer Engineering</a></li>
+                            <li><a href="ME.html">Mechanical Engineering</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="resources.html">RESOURCES</a></li>
+                    <li>
+                        <a href="#">BOOKS</a>
+                        <ul class="dropdown">
+                            <li><a href="CSE_BOOKS.html">CSE Books</a></li>
+                            <li><a href="ECOM_BOOKS.html">ECOM Books</a></li>
+                            <li><a href="ME_BOOKS.html">ME Books</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>   
+        <h1>Courses We Offer</h1>
+    </section>
+
+    <!-- Course Content Section -->
+    <section class="course">
+        <h1>Our Engineering Programs</h1>
+        <p>Discover our range of engineering programs, each tailored to equip students with practical skills and a deep understanding of the engineering landscape.</p>
+        <div class="row">
+            <div class="course-col">
+                <h3>Computer Science & Engineering</h3>
+                <p>Delve into the world of computer science, learning everything from programming fundamentals to advanced algorithms and data structures.</p>
+                <a href="CSE.html" class="hero-btn red-btn">Learn More</a>
+            </div>
+            <div class="course-col">
+                <h3>Electronics & Computer Engineering</h3>
+                <p>Explore the intersection of electronics and computing, with courses covering circuit design, microprocessors, and embedded systems.</p>
+                <a href="ECOM.html" class="hero-btn red-btn">Learn More</a>
+            </div>
+            <div class="course-col">
+                <h3>Mechanical Engineering</h3>
+                <p>Gain a thorough understanding of mechanical systems and engineering principles, including mechanics, thermodynamics, and material science.</p>
+                <a href="ME.html" class="hero-btn red-btn">Learn More</a>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!-- Footer Section -->
+    {{> footer}}
+
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>  
+</body>
+</html>

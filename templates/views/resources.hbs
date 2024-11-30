@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources - The Engineering Factory</title>
+<link rel="stylesheet" href="/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+</head>
+<body>
+    <section class="sub-header">
+        {{> navbar}}
+        <h1>Resources</h1>
+    </section>
+
+    <!-- Resources Table Section -->
+    <section class="resources-section">
+        <div class="resources-container">
+            <h2>Available Resources</h2>
+            <table class="resources-table">
+                <thead>
+                    <tr>
+                        <th>Content</th>
+                        <th>Description</th>
+                        <th>Get now</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DSA Notes</td>
+                        <td>Data Structures & Algorithms Notes</td>
+                        <td><button onclick="downloadPDF('/assets/R1.pdf')">Download</button></td>
+                    </tr>
+                    <tr>
+                        <td>Python Programming</td>
+                        <td>Python Basics PDF</td>
+                        <td><button onclick="downloadPDF('/assets/R2.pdf')">Download</button></td>
+                    </tr>
+                    <tr>
+                        <td>Machine Learning</td>
+                        <td>Advanced Machine Learning PDF</td>
+                        <td><button onclick="downloadPDF('/assets/R3.pdf')">Download</button></td>
+                    </tr>
+                    <tr>
+                        <td>Artificial Intelligence</td>
+                        <td>Trends in Artificial Intelligence PDF</td>
+                        <td><button onclick="downloadPDF('/assets/R4.pdf')">Download</button></td>
+                    </tr>
+                    <tr>
+                        <td>Algorithms</td>
+                        <td>Data Structures and Algorithms PDF</td>
+                        <td><button onclick="downloadPDF('/assets/R5.pdf')">Download</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    {{> footer}}
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - The Engineering Factory</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section class="sub-header">
+        {{> navbar}}
+        <h1 id="coursesTitle"></h1>
+    </section>
+
+    <!-- Course Content Section -->
+    <section class="course" id="courseSection">
+        <!-- Content will be injected here by JavaScript -->
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer" id="footerSection">
+        <h4>About Us</h4>
+        <p id="footerAbout"></p>
+        <div class="icons" id="socialIcons">
+            <!-- Social icons will be injected here -->
+        </div>
+        <p id="credits"></p>
+    </section>
+
+    <script>
+        // Fetch JSON data from the dt_courses.json file
+        fetch('course.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Rendering Course Content Section
+                document.getElementById("coursesTitle").textContent = data.pageContent.courses.title;
+
+                const courseSection = document.getElementById("courseSection");
+                const description = document.createElement("p");
+                description.textContent = data.pageContent.courses.description;
+                courseSection.appendChild(description);
+
+                const row = document.createElement("div");
+                row.classList.add("row");
+                data.pageContent.courses.coursesList.forEach(course => {
+                    const courseCol = document.createElement("div");
+                    courseCol.classList.add("course-col");
+
+                    const courseTitle = document.createElement("h3");
+                    courseTitle.textContent = course.name;
+                    courseCol.appendChild(courseTitle);
+
+                    const courseDesc = document.createElement("p");
+                    courseDesc.textContent = course.description;
+                    courseCol.appendChild(courseDesc);
+
+                    const learnMoreButton = document.createElement("a");
+                    learnMoreButton.href = course.link;
+                    learnMoreButton.classList.add("hero-btn", "red-btn");
+                    learnMoreButton.textContent = "Learn More";
+                    courseCol.appendChild(learnMoreButton);
+
+                    row.appendChild(courseCol);
+                });
+                courseSection.appendChild(row);
+
+                // Rendering Footer Section
+                document.getElementById("footerAbout").textContent = data.pageContent.footer.about;
+
+                // Rendering Social Icons
+                const socialIcons = document.getElementById("socialIcons");
+                for (const [key, value] of Object.entries(data.pageContent.footer.socialLinks)) {
+                    const iconLink = document.createElement('a');
+                    iconLink.href = value;
+                    iconLink.innerHTML = `<i class="fa fa-${key}"></i>`;
+                    socialIcons.appendChild(iconLink);
+                }
+
+                // Rendering Credits
+                document.getElementById("credits").innerHTML = data.pageContent.footer.credits;
+
+                // Log success to the console
+                console.log("Successfully loaded JSON data.");
+            })
+            .catch(error => {
+                console.error('Error loading JSON data:', error);
+            });
+
+        function showMenu() {
+            document.getElementById("navLinks").style.right = "0";
+        }
+
+        function hideMenu() {
+            document.getElementById("navLinks").style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>

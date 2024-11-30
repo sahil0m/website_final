@@ -1,0 +1,42 @@
+{
+    "CSE": {
+      "Data Structures": [
+        {
+          "question": "What is the time complexity of binary search?",
+          "answers": { "a": "O(n)", "b": "O(log n)", "c": "O(n^2)" },
+          "correct": "b"
+        },
+        {
+          "question": "Which data structure uses FIFO?",
+          "answers": { "a": "Stack", "b": "Queue", "c": "Tree" },
+          "correct": "b"
+        }
+      ],
+      "Web Development": [
+        {
+          "question": "What does CSS stand for?",
+          "answers": { "a": "Creative Style Sheets", "b": "Cascading Style Sheets", "c": "Computer Style Sheets" },
+          "correct": "b"
+        }
+      ]
+    },
+    "ECOM": {
+      "Economics": [
+        {
+          "question": "What is a balance sheet?",
+          "answers": { "a": "A financial statement", "b": "A marketing plan", "c": "An economic forecast" },
+          "correct": "a"
+        }
+      ]
+    },
+    "ME": {
+      "Thermodynamics": [
+        {
+          "question": "What is the unit of energy?",
+          "answers": { "a": "Joule", "b": "Watt", "c": "Newton" },
+          "correct": "a"
+        }
+      ]
+    }
+  }
+  

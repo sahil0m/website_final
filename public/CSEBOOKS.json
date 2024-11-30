@@ -1,0 +1,34 @@
+{
+    "books": [
+        {
+            "title": "Object-Oriented Programming Using C++",
+            "image": "images/book1.png",
+            "link": "https://chenweixiang.github.io/docs/The_C++_Programming_Language_4th_Edition_Bjarne_Stroustrup.pdf"
+        },
+        {
+            "title": "Basic Electronics and Electrical Engineering",
+            "image": "images/book2.png",
+            "link": "https://books.google.co.in/books?"
+        },
+        {
+            "title": "Fundamentals Of Data Science",
+            "image": "images/book3.png",
+            "link": "https://www.microsoft.com/en-us/research/uploads/prod/2006/01/"
+        },
+        {
+            "title": "Mathematics for Engineering",
+            "image": "images/book4.png",
+            "link": "https://rodrigopacios.github.io/mrpacios/download/"
+        },
+        {
+            "title": "The Art of Data Science",
+            "image": "images/book5.png",
+            "link": "https://bookdown.org/rdpeng/artofdatascience/"
+        },
+        {
+            "title": "Digital Logic and Computer Design",
+            "image": "images/book6.png",
+            "link": "Digital%20Logic%20And%20Computer%20Design%20By%20M.%20Morris%20Mano%20%282nd%20Edition%29.pdf"
+        }
+    ]
+}

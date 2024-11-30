@@ -1,0 +1,92 @@
+{
+    "header": {
+      "logo": "images/logo.png",
+      "logoText": "The Engineering Factory",
+      "menu": [
+        {"name": "HOME", "url": "/index"},
+        {"name": "ABOUT", "url": "/about"},
+        {
+          "name": "COURSES", 
+          "url": "/course",
+          "subMenu": [
+            {"name": "Computer Science & Engineering", "url": "/CSE"},
+            {"name": "Electronics and Computer Engineering", "url": "/ECOM"},
+            {"name": "Mechanical Engineering", "url": "/ME"}
+          ]
+        },
+        {"name": "RESOURCES", "url": "resources.html"},
+        {
+          "name": "BOOKS", 
+          "url": "#",
+          "subMenu": [
+            {"name": "CSE Books", "url": "/CSE_BOOKS"},
+            {"name": "ECOM Books", "url": "/ECOM_BOOKS"},
+            {"name": "ME Books", "url": "/ME_BOOKS"}
+          ]
+        },
+        {"name": "CONTACT", "url": "/contact"},
+        {"name": "LOGIN", "url": "/login-signup"}
+      ]
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Welcome to the engineering FACTORY, your ultimate destination for free study resources designed to empower engineering students at every stage of their academic journey.",
+      "mission": {
+        "title": "Our Mission",
+        "text": "Our mission is to support and empower students by providing access to high-quality, comprehensive study materials that enhance learning and academic performance."
+      },
+      "vision": {
+        "title": "Our vision",
+        "text": "Our mission is to support and empower students by providing access to high-quality, comprehensive study materials that enhance learning and academic performance."
+      },
+      "aim": {
+        "title": "Our Aim",
+        "text": "We are committed to fostering academic excellence and helping you achieve your goals without the burden of extra costs. Dive into our resources and start your journey with confidence and clarity."
+      }
+    },
+    "resources": {
+      "title": "Resources",
+      "description": "Explore our comprehensive study materials, textbooks, lecture notes, and interactive tutorials available at no cost.",
+      "facilities": [
+        {
+          "image": "images/LIBRARY1.jpg",
+          "title": "Library Access",
+          "description": "Access a world-class library full of essential materials to excel in engineering courses."
+        },
+        {
+          "image": "images/interactive2.jpg",
+          "title": "Interactive Tutorials",
+          "description": "Get hands-on with our interactive tutorials designed to enhance learning and performance."
+        },
+        {
+          "image": "images/SUPPORT1.jpg",
+          "title": "Supportive Community",
+          "description": "Connect with fellow learners and enjoy a supportive community of future engineers."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Students Say",
+      "description": "Hear from students who have benefited from our resources and support.",
+      "testimonials": [
+        {
+          "image": "images/user1.jpg",
+          "text": "\"The engineering FACTORY has been a game-changer in my studies. The resources are fantastic!\"",
+          "name": "Christine Berkley",
+          "rating": 4
+        },
+        {
+          "image": "images/user2.jpg",
+          "text": "\"I've been able to tackle complex concepts with ease thanks to the comprehensive materials provided.\"",
+          "name": "David Byer",
+          "rating": 4.5
+        }
+      ]
+    },
+    "cta": {
+      "title": "Enroll For Our Various Online Courses Anywhere From The World",
+      "buttonText": "CONTACT US",
+      "url": "/contact"
+    }
+  }
+  

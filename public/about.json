@@ -1,0 +1,44 @@
+{
+    "pageContent": {
+      "aboutUs": {
+        "title": "About Us",
+        "content": [
+          {
+            "type": "h2",
+            "text": "Welcome to The Engineering Factory"
+          },
+          {
+            "type": "p",
+            "text": "The Engineering Factory was founded with a single mission: to provide high-quality, accessible educational resources for engineering students around the world. We are committed to helping students succeed by offering free and comprehensive materials, from lecture notes to interactive tutorials."
+          },
+          {
+            "type": "h3",
+            "text": "Our Vision"
+          },
+          {
+            "type": "p",
+            "text": "Our vision is to create a global community of future engineers equipped with the knowledge and resources needed to tackle the world's toughest challenges. We believe that with the right tools and guidance, every student has the potential to excel."
+          },
+          {
+            "type": "h3",
+            "text": "Our Mission"
+          },
+          {
+            "type": "p",
+            "text": "Our mission is to make learning affordable and accessible. We strive to support students through free online resources covering essential topics in Computer Science, Electronics, Mechanical Engineering, and beyond. By providing quality materials, we aim to remove financial barriers and promote equal educational opportunities for all."
+          }
+        ]
+      },
+      "footer": {
+        "about": "We provide high-quality resources and support for engineering students around the world. Join us on your educational journey and access top-notch materials to enhance your learning experience.",
+        "contactEmail": "theengineeringfactory1@gmail.com",
+        "socialLinks": {
+          "facebook": "#",
+          "twitter": "#",
+          "instagram": "#",
+          "linkedin": "#"
+        }
+      }
+    }
+  }
+  

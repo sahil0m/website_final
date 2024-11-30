@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ME Books - The Engineering Factory</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="sub-header">
+        {{> navbar}}
+        <h1>ME Books</h1>
+    </section>
+    
+    <!-- Floating Books Section -->
+    <section class="floating-books">
+        <div class="books-links">
+            <div class="links-grid">
+                <div class="item">
+                    <img src="images/book1.png" alt="Book 1">
+                </div>
+                <div class="item">
+                    <img src="images/book2.png" alt="Book 2">
+                </div>
+                <div class="item">
+                    <img src="images/book3.png" alt="Book 3">
+                </div>
+                <div class="item">
+                    <img src="images/book7.png" alt="Book 4">
+                </div>
+                <div class="item">
+                    <img src="images/book8.png" alt="Book 5">
+                </div>
+                <div class="item">
+                    <img src="images/book9.png" alt="Book 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ME Books Section -->
+    <section class="about-us">
+        <div class="search-bar">
+            <h2>FIRST YEAR (ME BOOKS)</h2>
+            <div class="search-option">
+                <i class="fa fa-search"></i>
+                <span>Search</span>
+            </div>
+        </div>
+        
+        <div class="subject-grid">
+            <div class="grid-content">
+                <div class="item1">
+                    <img src="images/book1.png" alt="C++ Programming">
+                    <h3><a href="https://chenweixiang.github.io/docs/The_C++_Programming_Language_4th_Edition_Bjarne_Stroustrup.pdf">Object-Oriented Programming Using C++</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="images/book2.png" alt="Basic Electronics">
+                    <h3><a href="https://books.google.co.in/books?">Basic Electronics and Electrical Engineering</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="images/book3.png" alt="Fundamentals of Data Science">
+                    <h3><a href="https://www.microsoft.com/en-us/research/uploads/prod/2006/01/">Fundamentals Of Data Science</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="images/book4.png" alt="Mathematics for Engineering">
+                    <h3><a href="https://rodrigopacios.github.io/mrpacios/download/">Mathematics for Engineering</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="images/book5.png" alt="Art of Data Science">
+                    <h3><a href="https://bookdown.org/rdpeng/artofdatascience/">The Art of Data Science</a></h3>
+                </div>
+                <div class="item1">
+                    <img src="images/book6.png" alt="Digital Logic Design">
+                    <h3><a href="Digital%20Logic%20And%20Computer%20Design%20By%20M.%20Morris%20Mano%20%282nd%20Edition%29.pdf">Digital Logic and Computer Design</a></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    {{> footer}}
+    
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+</html>

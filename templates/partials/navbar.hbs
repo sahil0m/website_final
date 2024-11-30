@@ -1,0 +1,45 @@
+<nav>
+    <div class="logo-container">
+        <a href="/"><img src="images/logo.png" alt="logo"></a>
+        <span class="logo-text">The Engineering Factory</span>
+    </div>
+    <div class="nav-links" id="navLinks">  
+        <i class="fa fa-close" onclick="hideMenu()"></i>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/about">ABOUT</a></li>
+            <li>
+                <a href="/course">COURSES</a>
+                <ul class="dropdown">
+                    <li><a href="/CSE">Computer Science & Engineering</a></li>
+                    <li><a href="/ECOM">Electronics and Computer Engineering</a></li>
+                    <li><a href="/ME">Mechanical Engineering</a></li>
+                </ul>
+            </li>
+            <li><a href="/resources">RESOURCES</a></li>
+            <li>
+                <a href="#">BOOKS</a>
+                <ul class="dropdown">
+                    <li><a href="/CSE_BOOKS">CSE Books</a></li>
+                    <li><a href="/ECOM_BOOKS">ECOM Books</a></li>
+                    <li><a href="/ME_BOOKS">ME Books</a></li>
+                </ul>
+            </li>
+            <li><a href="/contact">CONTACT</a></li>
+
+            <!-- Show dropdown with user name and logout if logged in -->
+            {{#if user}}
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle">{{user.fullName}}</a>
+                <ul class="dropdown">
+                    <li><a href="/logout">LOGOUT</a></li>
+                </ul>
+            </li>
+            {{else}}
+            <!-- Show login link if not logged in -->
+            <li><a href="/login-signup">LOGIN</a></li>
+            {{/if}}
+        </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+</nav>

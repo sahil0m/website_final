@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Signup - The Engineering Factory</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Inline CSS to handle visibility */
+        .form-item {
+            display: none; /* Hide all forms by default */
+        }
+        .form-item.active {
+            display: block; /* Show the active form */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="sub-header">
+        {{> navbar}}
+        <h1>Login / Signup</h1>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-container">
+        <div class="container">
+            <div class="box">
+                <div class="container-forms">
+                    <div class="container-info">
+                        <div class="info-item">
+                            <div class="table">
+                                <div class="table-cell">
+                                    <p>Have an account?</p>
+                                    <button class="btn" onclick="toggleForm('login')">Log in</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="table">
+                                <div class="table-cell">
+                                    <p>Don't have an account?</p>
+                                    <button class="btn" onclick="toggleForm('signup')">Sign up</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-form">
+                        <!-- Login Form -->
+                        <div class="form-item log-in active" id="loginForm">
+                            <form action="/login" method="POST">
+                                <div class="table">
+                                    <div class="table-cell">
+                                        <label for="loginUsername">Username</label>
+                                        <input type="text" id="loginUsername" name="username" placeholder="Username" required>
+                                        <label for="loginPassword">Password</label>
+                                        <input type="password" id="loginPassword" name="password" placeholder="Password" required>
+                                        <button class="btn" type="submit">Log in</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- Signup Form -->
+                        <div class="form-item sign-up" id="signupForm">
+                            <form action="/signup" method="POST">
+                                <div class="table">
+                                    <div class="table-cell">
+                                        <label for="signupEmail">Email</label>
+                                        <input type="email" id="signupEmail" name="email" placeholder="Email" required>
+                                        <label for="signupFullName">Full Name</label>
+                                        <input type="text" id="signupFullName" name="fullName" placeholder="Full Name" required>
+                                        <label for="signupUsername">Username</label>
+                                        <input type="text" id="signupUsername" name="username" placeholder="Username" required>
+                                        <label for="signupPassword">Password</label>
+                                        <input type="password" id="signupPassword" name="password" placeholder="Password" required>
+                                        <label for="signupConfirmPassword">Confirm Password</label>
+                                        <input type="password" id="signupConfirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                                        <button class="btn" type="submit">Sign up</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    {{> footer}}
+
+    <!-- JavaScript for Form Toggle -->
+    <script>
+        function toggleForm(formType) {
+            document.getElementById('loginForm').classList.toggle('active', formType === 'login');
+            document.getElementById('signupForm').classList.toggle('active', formType === 'signup');
+        }
+    </script>
+</body>
+</html>

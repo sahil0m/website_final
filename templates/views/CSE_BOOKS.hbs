@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Books - The Engineering Factory</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .grid-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    justify-content: center;
+}
+
+.grid-content .item1 {
+    background: #fff3f3;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-content .item1 img {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 150px;
+    object-fit: cover;
+}
+
+.grid-content .item1 h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 15px 0 10px;
+    color: #333;
+}
+
+.grid-content .item1 a {
+    text-decoration: none;
+    color: #fabc3f;
+    font-size: 14px;
+}
+
+.grid-content .item1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="sub-header">
+        {{> navbar}}
+        <h1>CSE Books</h1>
+    </section>
+
+    <section class="floating-books">
+        <div class="books-links">
+            <div class="links-grid">
+                <div class="item">
+                    <img src="images/book1.png" alt="Book 1">
+                </div>
+                <div class="item">
+                    <img src="images/book2.png" alt="Book 2">
+                </div>
+                <div class="item">
+                    <img src="images/book3.png" alt="Book 3">
+                </div>
+                <div class="item">
+                    <img src="images/book7.png" alt="Book 4">
+                </div>
+                <div class="item">
+                    <img src="images/book8.png" alt="Book 5">
+                </div>
+                <div class="item">
+                    <img src="images/book9.png" alt="Book 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSE Books Section -->
+    <section class="about-us">
+        <div class="search-bar">
+            <h2>FIRST YEAR (CSE BOOKS)</h2>
+        </div>
+        
+       
+    
+        
+        <div class="subject-grid">
+            <div class="grid-content" id="bookContainer">
+                <!-- Books will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    {{> footer}}
+
+    <!-- JavaScript -->
+    
+    <!-- JavaScript for Dynamic Content -->
+    <script>
+// Fetch books from JSON and display them dynamically
+fetch('CSEBOOKS.json')
+    .then(response => response.json())
+    .then(data => {
+        const bookContainer = document.getElementById('bookContainer');
+        data.books.forEach(book => {
+            const bookItem = document.createElement('div');
+            bookItem.classList.add('item1');
+
+            // Add image
+            const img = document.createElement('img');
+            img.src = book.image;
+            img.alt = book.title;
+            bookItem.appendChild(img);
+
+            // Add title and link
+            const title = document.createElement('h3');
+            const link = document.createElement('a');
+            link.href = book.link;
+            link.textContent = book.title;
+            title.appendChild(link);
+            bookItem.appendChild(title);
+
+            // Append the book item to the container
+            bookContainer.appendChild(bookItem);
+        });
+    })
+    .catch(error => console.error('Error fetching book data:', error));
+
+    </script>
+</body>
+</html>
