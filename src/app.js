@@ -97,18 +97,18 @@ app.get('/login', (req, res) => {
 
 app.post('/login', async (req, res) => {
     try {
-        const { username, password } = req.body;
+        const { email, password } = req.body;
 
-        const user = await Register.findOne({ username });
+        const user = await Register.findOne({ email });
 
         if (!user) {
-            return res.status(400).send('Invalid username or password');
+            return res.status(400).send('Invalid email or password');
         }
 
         if (user.password === password) {
             req.session.user = {
                 id: user._id,
-                username: user.username,
+                email: user.email,
                 fullName: user.fullName,
             };
             return res.redirect('/');
